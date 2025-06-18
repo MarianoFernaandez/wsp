@@ -4,7 +4,8 @@ import os # Importamos 'os' para posibles usos futuros con variables de entorno
 app = Flask(__name__)
 
 # CUANDO RECIBAMOS LAS PETICIONES EN ESTA RUTA
-@app.route("/webhook/", methods=["POST", "GET"])
+# >>>>>> ¡¡¡ESTA ES LA LÍNEA QUE DEBES CAMBIAR!!! <<<<<<
+@app.route("/", methods=["POST", "GET"]) # <--- CAMBIO AQUI: DE "/webhook/" a "/"
 def webhook_whatsapp():
     # SI HAY DATOS RECIBIDOS VIA GET
     if request.method == "GET":
